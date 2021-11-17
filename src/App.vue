@@ -1,8 +1,6 @@
 <template>
-  <div>Hello {{ value }}
-
-    <span>메세지 {{ message }}</span>
-    <button @click="handleClick">클릭</button>
+  <div id="app">
+    {{message}}
   </div>
 </template>
 
@@ -11,12 +9,13 @@ export default {
   name: "App",
   data() {
     return {
-      value: "World"
+      message: "World"
     };
   },
   async mounted() {
     const { text } = await (await fetch("/api/message")).json();
-    this.value = text;
+    console.log(text)
+    this.message = text;
   },
   methods: {
     handleClick() {
