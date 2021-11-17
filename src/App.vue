@@ -18,8 +18,10 @@ export default {
     const { text } = await (await fetch("/api/message")).json();
     this.value = text;
   },
-  handleClick(){
-    alert("클릭됨")
+  methods: {
+    handleClick() {
+      alert("클릭됨");
+    }
   }
 };
 </script>
